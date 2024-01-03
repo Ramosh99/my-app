@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Layout from './components/shared/Layout';
+import All_Villas from './pages/All_Villas';
+import Add_Villas from './pages/Add_Villas';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Routes>
+        <Route path='/' element={<All_Villas></All_Villas>}></Route>
+      </Routes>
+
+      <Routes>
+        <Route path='/add-villa' element={<Add_Villas></Add_Villas>}></Route>
+      </Routes>
+      
+    </Layout>
   );
 }
 
